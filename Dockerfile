@@ -9,6 +9,6 @@ RUN mvn clean package
 
 FROM openjdk:21 AS runner
 
-COPY --from=builder /build/target/*.jar app.jar
+COPY --from=builder /app/build/target/*.jar app.jar
 
 CMD ["java", "-jar", "app.jar"]
